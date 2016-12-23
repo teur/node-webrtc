@@ -409,7 +409,7 @@ NAN_METHOD(PeerConnection::GetStats) {
       Nan::New("data channel is closed").ToLocalChecked()
     };
     onFailure->Call(1, argv);
-  } else if (!self->_jinglePeerConnection->GetStats(statsObserver, nullptr,
+  } else if (!self->_jinglePeerConnection->GetStats(statsObserver,
     webrtc::PeerConnectionInterface::kStatsOutputLevelStandard)) {
     // TODO: Include error?
     Local<Value> argv[] = {
